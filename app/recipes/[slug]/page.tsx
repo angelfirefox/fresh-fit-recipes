@@ -5,14 +5,14 @@ import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes";
 import PrintButton from "@/components/PrintButton";
 
 export async function generateStaticParams() {
-  const recipes = getAllRecipes();
+  const recipes = await getAllRecipes();
   return recipes.map((recipe) => ({
     slug: recipe.slug,
   }));
 }
 
-export default function RecipePage({ params }: { params: { slug: string } }) {
-  const recipe = getRecipeBySlug(params.slug);
+export default async function RecipePage({ params }: { params: { slug: string } }) {
+  const recipe = await getRecipeBySlug(params.slug);
 
   if (!recipe) {
     notFound();

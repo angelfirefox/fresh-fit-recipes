@@ -191,11 +191,15 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
-export function getAllRecipes(): Recipe[] {
+export async function getAllRecipes(): Promise<Recipe[]> {
+  // Simulating a delay to demonstrate async behavior
+  await new Promise(resolve => setTimeout(resolve, 100));
   return recipes;
 }
 
-export function getRecipeBySlug(slug: string): Recipe | undefined {
+export async function getRecipeBySlug(slug: string): Promise<Recipe | undefined> {
+  // Simulating a delay to demonstrate async behavior
+  await new Promise(resolve => setTimeout(resolve, 50));
   return recipes.find(recipe => recipe.slug === slug);
 }
 
