@@ -5,15 +5,28 @@ import Image from "next/image";
 
 export default function FeaturedRecipe({ recipe }: { recipe: Recipe }) {
   return (
-    <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
-      
-      {/* Background emoji as decorative element */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-        <span className="text-[40rem]">{recipe.heroImage}</span>
-      </div>
+    <div className="relative bg-linear-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
+      {recipe.imagePath ? (
+        <>
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={recipe.imagePath}
+              alt={recipe.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black/40 z-10"></div>
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+            <span className="text-[40rem]">{recipe.heroImage}</span>
+          </div>
+        </>
+      )}
 
-      <div className="relative z-20 max-w-screen-xl mx-auto px-4 py-20 md:py-32">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-32">
         <div className="max-w-3xl">
           <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
             ⭐ FEATURED RECIPE

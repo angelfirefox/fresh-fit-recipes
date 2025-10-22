@@ -17,7 +17,20 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           className="aspect-4/3 bg-linear-to-br from-green-50 to-blue-50 flex items-center justify-center overflow-hidden relative"
           aria-hidden="true"
         >
-          <span className="text-7xl group-hover:scale-110 transition-transform duration-500 ease-out">{recipe.heroImage}</span>
+          {recipe.imagePath ? (
+            <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out">
+              <img 
+                src={recipe.imagePath}
+                alt={recipe.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <span className="text-7xl group-hover:scale-110 transition-transform duration-500 ease-out">
+              {recipe.heroImage}
+            </span>
+          )}
           
           {/* Quick info overlay */}
           <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-700 flex items-center gap-1 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:bg-white">

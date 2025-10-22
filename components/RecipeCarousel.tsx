@@ -44,7 +44,7 @@ export default function RecipeCarousel({ recipes }: { recipes: Recipe[] }) {
         {visibleRecipes.map((recipe) => (
           <Link key={recipe.slug} href={`/recipes/${recipe.slug}`}>
             <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden h-full border border-gray-200">
-              <div className="aspect-[4/3] bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
+              <div className="aspect-4/3 bg-linear-to-br from-green-50 to-blue-50 flex items-center justify-center">
                 <span className="text-8xl">{recipe.heroImage}</span>
               </div>
               <div className="p-5">

@@ -5,6 +5,7 @@ export interface Recipe {
   date: string;
   updated?: string;
   heroImage: string;
+  imagePath?: string;
   servings: number;
   prepTimeMinutes: number;
   cookTimeMinutes: number;

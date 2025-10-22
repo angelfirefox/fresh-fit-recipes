@@ -19,7 +19,7 @@ export default async function RecipePage({ params }: { params: { slug: string } 
   }
 
   return (
-    <div className="max-w-screen-lg mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-4 py-8">
       <Link 
         href="/recipes"
         className="text-green-600 hover:text-green-700 mb-4 inline-block"
@@ -28,7 +28,7 @@ export default async function RecipePage({ params }: { params: { slug: string } 
       </Link>
 
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-        <div className="text-8xl text-center py-16 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="text-8xl text-center py-16 bg-linear-to-br from-green-50 to-blue-50">
           {recipe.heroImage}
         </div>
 
@@ -138,7 +138,7 @@ export default async function RecipePage({ params }: { params: { slug: string } 
               <ol className="space-y-3">
                 {recipe.steps.map((step, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <span className="shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                       {idx + 1}
                     </span>
                     <span className="flex-1">{step}</span>

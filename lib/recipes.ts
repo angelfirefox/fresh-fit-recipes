@@ -1,4 +1,5 @@
 import { Recipe, BlogPost } from "@/types/recipe";
+import { recipeImageData } from "./image-data";
 
 export const recipes: Recipe[] = [
   {
@@ -7,6 +8,7 @@ export const recipes: Recipe[] = [
     description: "Spinach, banana, almond butter, and protein for a 2‑minute breakfast.",
     date: "2025-10-20",
     heroImage: "🥤",
+    imagePath: recipeImageData[0].url,
     servings: 1,
     prepTimeMinutes: 2,
     cookTimeMinutes: 0,
@@ -35,6 +37,7 @@ export const recipes: Recipe[] = [
     description: "Hearty bowl with quinoa, kale, roasted chickpeas, and tahini lemon dressing.",
     date: "2025-10-20",
     heroImage: "🥗",
+    imagePath: recipeImageData[1].url,
     servings: 2,
     prepTimeMinutes: 10,
     cookTimeMinutes: 20,
@@ -67,6 +70,7 @@ export const recipes: Recipe[] = [
     description: "One pan, 25 minutes: salmon with broccoli and potatoes.",
     date: "2025-10-20",
     heroImage: "🐟",
+    imagePath: recipeImageData[2].url,
     servings: 4,
     prepTimeMinutes: 10,
     cookTimeMinutes: 15,
@@ -96,6 +100,7 @@ export const recipes: Recipe[] = [
     description: "5‑minute parfait with berries, nuts, and a touch of honey.",
     date: "2025-10-20",
     heroImage: "🍨",
+    imagePath: recipeImageData[3].url,
     servings: 1,
     prepTimeMinutes: 5,
     cookTimeMinutes: 0,
@@ -120,6 +125,7 @@ export const recipes: Recipe[] = [
     description: "Crispy tofu with colorful veggies in a chili‑garlic sauce.",
     date: "2025-10-20",
     heroImage: "🍜",
+    imagePath: recipeImageData[4].url,
     servings: 3,
     prepTimeMinutes: 10,
     cookTimeMinutes: 15,
@@ -148,6 +154,7 @@ export const recipes: Recipe[] = [
     description: "Base recipe plus chocolate‑banana and blueberry‑lemon variations.",
     date: "2025-10-20",
     heroImage: "🥣",
+    imagePath: recipeImageData[5].url,
     servings: 1,
     prepTimeMinutes: 5,
     cookTimeMinutes: 0,

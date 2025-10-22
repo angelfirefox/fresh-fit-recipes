@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50" style={{background:'transparent'}}>
-      <div className="max-w-screen-lg mx-auto px-4 py-4" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}}>
+      <div className="max-w-5xl mx-auto px-4 py-4" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}}>
         <Link href="/" className="block mb-0 hover:opacity-95 transition-opacity" aria-label={siteConfig.name}>
           <div style={{display:'flex',alignItems:'center',gap:12}}>
             <Image src="/wordmark.svg" alt="wordmark" width={200} height={40} className="wordmark" />
