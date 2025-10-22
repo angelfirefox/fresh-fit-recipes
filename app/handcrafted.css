@@ -19,15 +19,150 @@ body {
   line-height: 1.5;
 }
 
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Typography System */
+:root {
+  --scale-000: 0.75rem;   /* 12px */
+  --scale-100: 0.875rem;  /* 14px */
+  --scale-200: 1rem;      /* 16px */
+  --scale-300: 1.125rem;  /* 18px */
+  --scale-400: 1.25rem;   /* 20px */
+  --scale-500: 1.5rem;    /* 24px */
+  --scale-600: 1.875rem;  /* 30px */
+  --scale-700: 2.25rem;   /* 36px */
+  --scale-800: 3rem;      /* 48px */
+  --scale-900: 3.75rem;   /* 60px */
+  
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+}
+
 /* Typographic rhythm */
-h1, h2, h3 { color: var(--ink); margin: 0 0 0.5rem 0; }
-h1 { font-family: 'Bellefair', 'Palatino', serif; font-size: 3.2rem; letter-spacing: -0.02em; line-height: 1.05; }
-h2 { font-family: 'Calligraffitti', cursive; font-size: 1.6rem; letter-spacing: 0; color: var(--ink); }
-h3 { font-family: Georgia, serif; font-size: 1.05rem; color: var(--muted-ink); }
+h1, h2, h3 { 
+  color: var(--ink); 
+  margin: 0 0 0.5rem 0;
+  max-width: 50ch;
+}
 
-.eyebrow{ display:inline-block; font-size:0.78rem; color:var(--muted-ink); margin-bottom:0.6rem; }
+h1 { 
+  font-family: 'Bellefair', 'Palatino', serif; 
+  font-size: var(--scale-600);
+  letter-spacing: -0.02em; 
+  line-height: var(--leading-tight);
+  font-weight: 700;
+}
 
-.lead{ font-size:1.05rem; color:#3a332b; max-width:55ch; }
+@media (min-width: 640px) {
+  h1 { font-size: var(--scale-700); }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: var(--scale-800); }
+}
+
+h2 { 
+  font-family: 'Calligraffitti', cursive; 
+  font-size: var(--scale-400);
+  letter-spacing: 0; 
+  color: var(--ink);
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 640px) {
+  h2 { font-size: var(--scale-500); }
+}
+
+h3 { 
+  font-family: Georgia, serif; 
+  font-size: var(--scale-300); 
+  color: var(--muted-ink);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+}
+
+/* Text Utilities */
+.eyebrow { 
+  display: inline-block; 
+  font-size: var(--scale-000); 
+  color: var(--muted-ink); 
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.lead { 
+  font-size: var(--scale-300); 
+  color: var(--muted-ink); 
+  max-width: 65ch;
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--scale-500);
+}
+
+/* Body Text */
+p {
+  font-size: var(--scale-200);
+  line-height: var(--leading-normal);
+  color: var(--ink);
+  max-width: 65ch;
+  margin-bottom: var(--scale-400);
+}
+
+.small {
+  font-size: var(--scale-100);
+  line-height: var(--leading-snug);
+  color: var(--muted-ink);
+}
+
+.large {
+  font-size: var(--scale-300);
+  line-height: var(--leading-relaxed);
+}
+
+/* List Typography */
+ul, ol {
+  padding-left: var(--scale-400);
+  margin-bottom: var(--scale-400);
+  line-height: var(--leading-relaxed);
+}
+
+li {
+  margin-bottom: var(--scale-200);
+}
+
+/* Link Typography */
+a {
+  color: var(--ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--muted-ink);
+}
 
 /* Handwritten flourish for key headings */
 .flourish {
@@ -64,12 +199,89 @@ h3 { font-family: Georgia, serif; font-size: 1.05rem; color: var(--muted-ink); }
 
 /* Subtle watercolor gradient backgrounds for hero */
 .hero{
-  padding:4.4rem 2rem; border-radius:14px; margin-bottom:2rem;
-  background: radial-gradient(800px 300px at 15% 10%, rgba(217,187,160,0.08), transparent 15%), radial-gradient(700px 240px at 80% 70%, rgba(145,123,107,0.06), transparent 18%);
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  background: radial-gradient(400px 200px at 15% 10%, rgba(217,187,160,0.08), transparent 15%), 
+              radial-gradient(350px 180px at 80% 70%, rgba(145,123,107,0.06), transparent 18%);
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    background: radial-gradient(600px 250px at 15% 10%, rgba(217,187,160,0.08), transparent 15%),
+                radial-gradient(500px 200px at 80% 70%, rgba(145,123,107,0.06), transparent 18%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 4.4rem 2rem;
+    border-radius: 14px;
+    background: radial-gradient(800px 300px at 15% 10%, rgba(217,187,160,0.08), transparent 15%),
+                radial-gradient(700px 240px at 80% 70%, rgba(145,123,107,0.06), transparent 18%);
+  }
 }
 
 /* Accessibility: ensure contrast */
 p, li, a { color: #24201b; }
+
+/* Responsive spacing utilities */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Mobile-first card grid */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
 
 /* Small, tasteful animations */
 @media (prefers-reduced-motion: no-preference){
@@ -78,4 +290,18 @@ p, li, a { color: #24201b; }
 }
 
 /* Decorative brush stroke accents */
-.brush-acc { display:block; width:100%; height:6px; background:linear-gradient(90deg, rgba(217,187,160,0.9), rgba(236,218,198,0.9)); filter: blur(0.4px); opacity:0.96; border-radius:4px; }
+.brush-acc { 
+  display: block; 
+  width: 100%; 
+  height: 4px;
+  background: linear-gradient(90deg, rgba(217,187,160,0.9), rgba(236,218,198,0.9)); 
+  filter: blur(0.4px); 
+  opacity: 0.96; 
+  border-radius: 4px; 
+}
+
+@media (min-width: 640px) {
+  .brush-acc {
+    height: 6px;
+  }
+}
