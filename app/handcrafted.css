@@ -1,0 +1,81 @@
+/* Handcrafted theme: tactile, warm, and intentional */
+:root{
+  --ink: #1a1a17; /* primary text ink */
+  --muted-ink: #3b3228; /* secondary */
+  --paper: #fbf8f4; /* warm off-white paper */
+  --warm: #d9bba0; /* hand-dyed warm accent */
+  --sepia: #c9b39a; /* subtle border */
+  --accent: linear-gradient(135deg, rgba(217,187,160,0.98), rgba(236,218,198,0.98));
+  --glass: rgba(255,255,255,0.6);
+}
+
+/* Base layout */
+body {
+  background: var(--paper) url('/textures/paper-subtle.png') repeat; /* optional texture */
+  color: var(--ink);
+  font-family: "Tiempos Text", Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.5;
+}
+
+/* Typographic rhythm */
+h1, h2, h3 { color: var(--ink); margin: 0 0 0.5rem 0; }
+h1 { font-family: 'Bellefair', 'Palatino', serif; font-size: 3.2rem; letter-spacing: -0.02em; line-height: 1.05; }
+h2 { font-family: 'Calligraffitti', cursive; font-size: 1.6rem; letter-spacing: 0; color: var(--ink); }
+h3 { font-family: Georgia, serif; font-size: 1.05rem; color: var(--muted-ink); }
+
+.eyebrow{ display:inline-block; font-size:0.78rem; color:var(--muted-ink); margin-bottom:0.6rem; }
+
+.lead{ font-size:1.05rem; color:#3a332b; max-width:55ch; }
+
+/* Handwritten flourish for key headings */
+.flourish {
+  font-family: 'Homemade Apple', 'Brush Script MT', cursive;
+  font-size:1.8rem; color:var(--ink);
+  display:inline-block; transform-origin:left center;
+}
+
+/* Cards and components */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(250,246,242,0.9));
+  border: 1px solid var(--sepia);
+  box-shadow: 0 8px 18px rgba(26,26,23,0.06), 0 2px 4px rgba(26,26,23,0.04);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.wordmark{ display:inline-block; height:48px; }
+
+/* Buttons with tactile ink effect */
+.btn {
+  display:inline-flex; align-items:center; gap:0.6rem; padding:0.6rem 1rem; border-radius:8px; text-decoration:none;
+  background: transparent; color:var(--ink); border:1px solid rgba(26,26,23,0.08); font-weight:600;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease, color 120ms ease;
+}
+.btn:hover{ transform: translateY(-2px) rotate(-0.15deg); box-shadow: 0 10px 24px rgba(26,26,23,0.08); color: #0f0f0f; }
+
+/* Ink-shift hover for 'alive' micro-interaction */
+.ink-shift{ position:relative; display:inline-block; }
+.ink-shift::after{
+  content:''; position:absolute; inset:0; border-radius:8px; pointer-events:none; transition:transform 220ms ease, opacity 220ms ease; transform:translateY(2px) skewX(-2deg); opacity:0.02; background:linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+}
+.ink-shift:hover::after{ transform:translateY(0px) skewX(0deg); opacity:0.06; }
+
+/* Subtle watercolor gradient backgrounds for hero */
+.hero{
+  padding:4.4rem 2rem; border-radius:14px; margin-bottom:2rem;
+  background: radial-gradient(800px 300px at 15% 10%, rgba(217,187,160,0.08), transparent 15%), radial-gradient(700px 240px at 80% 70%, rgba(145,123,107,0.06), transparent 18%);
+}
+
+/* Accessibility: ensure contrast */
+p, li, a { color: #24201b; }
+
+/* Small, tasteful animations */
+@media (prefers-reduced-motion: no-preference){
+  .flourish{ transition: transform 420ms cubic-bezier(.2,.8,.2,1); }
+  .flourish:hover{ transform: translateX(6px) rotate(-1deg); }
+}
+
+/* Decorative brush stroke accents */
+.brush-acc { display:block; width:100%; height:6px; background:linear-gradient(90deg, rgba(217,187,160,0.9), rgba(236,218,198,0.9)); filter: blur(0.4px); opacity:0.96; border-radius:4px; }

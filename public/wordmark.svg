@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360" height="64" viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fresh Fit Recipes wordmark">
+  <defs>
+    <filter id="inkShadow" x="-20%" y="-40%" width="140%" height="200%" filterUnits="objectBoundingBox">
+      <feGaussianBlur stdDeviation="1.6" result="blur" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.25 0" />
+      <feOffset dx="0" dy="2"/>
+    </filter>
+  </defs>
+  <!-- Handwritten-styled wordmark: smooth curves + slight ink variance -->
+  <g filter="url(#inkShadow)">
+    <path d="M12 44c18-18 38-28 68-6 20 14 44 18 76 6 20-8 44-24 68-18" stroke="#1a1a17" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.98"/>
+    <path d="M24 26c14-8 32-10 52 2 18 10 36 8 58-2" stroke="#1a1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+  </g>
+  <!-- Subtext / tagline with a typewriter-ish, slightly imperfect baseline -->
+  <g transform="translate(8,50)" fill="#3b3228" font-family="Georgia, 'Times New Roman', serif" font-size="10">
+    <text x="0" y="0">handcrafted recipes & notes</text>
+  </g>
+</svg>
