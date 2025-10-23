@@ -35,37 +35,21 @@ export default function FeaturedRecipe({ recipe }: { recipe: Recipe }) {
       )}
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-32">
-        <div className="grid md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-center">
-          {/* Logo Badge on the left */}
-          <div className="flex justify-center md:justify-start">
-            <div className="animate-fade-in-up">
-              <Image
-                src="/logo-badge.svg"
-                alt="Fresh Fit Recipes Logo"
-                width={200}
-                height={200}
-                className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 drop-shadow-2xl"
-                priority
-              />
-            </div>
+        <div className="max-w-3xl">
+          <div
+            className="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg animate-float"
+            style={{
+              boxShadow: '0 10px 30px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.2)',
+            }}
+          >
+            ⭐ FEATURED RECIPE
           </div>
 
-          {/* Content on the right */}
-          <div className="max-w-3xl">
-            <div
-              className="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg animate-float"
-              style={{
-                boxShadow: '0 10px 30px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.2)',
-              }}
-            >
-              ⭐ FEATURED RECIPE
-            </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up drop-shadow-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-in-up drop-shadow-2xl">
             {recipe.title}
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-yellow-300 leading-relaxed animate-fade-in-up font-semibold" style={{animationDelay: '0.2s'}}>
             {recipe.description}
           </p>
 
@@ -114,7 +98,6 @@ export default function FeaturedRecipe({ recipe }: { recipe: Recipe }) {
           >
             Get the Recipe →
           </Link>
-          </div>
         </div>
       </div>
     </div>
