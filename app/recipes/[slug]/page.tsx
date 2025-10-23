@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Users, ChefHat } from "lucide-react";
 import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes";
 import PrintButton from "@/components/PrintButton";
@@ -28,9 +29,23 @@ export default async function RecipePage({ params }: { params: { slug: string } 
       </Link>
 
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-        <div className="text-8xl text-center py-16 bg-linear-to-br from-green-50 to-blue-50">
-          {recipe.heroImage}
-        </div>
+        {recipe.imagePath ? (
+          <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-green-50 to-blue-50">
+            <Image
+              src={recipe.imagePath}
+              alt={recipe.title}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+              className="animate-fade-in"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+          </div>
+        ) : (
+          <div className="text-8xl text-center py-16 bg-gradient-to-br from-green-50 to-blue-50">
+            {recipe.heroImage}
+          </div>
+        )}
 
         <div className="p-8">
           <div className="mb-6">
