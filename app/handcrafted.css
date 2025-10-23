@@ -7,6 +7,22 @@
   --sepia: #c9b39a; /* subtle border */
   --accent: linear-gradient(135deg, rgba(217,187,160,0.98), rgba(236,218,198,0.98));
   --glass: rgba(255,255,255,0.6);
+
+  /* Extended artistic color palette */
+  --ochre: #cc8b3d;
+  --terracotta: #c77a58;
+  --sage: #8b9a7e;
+  --clay: #a67b5b;
+  --sunset: linear-gradient(135deg, #ff8a5b, #ff6b9d, #c44569);
+  --dawn: linear-gradient(135deg, #fddb92, #fccb90, #f77062);
+  --forest: linear-gradient(135deg, #667a59, #8b9a7e, #b4c5a7);
+  --twilight: linear-gradient(135deg, #6b5b95, #8b7ba8, #b8a5d3);
+
+  /* Depth and shadow */
+  --shadow-soft: 0 2px 8px rgba(26,26,23,0.04), 0 8px 24px rgba(26,26,23,0.06);
+  --shadow-medium: 0 4px 16px rgba(26,26,23,0.08), 0 12px 32px rgba(26,26,23,0.10);
+  --shadow-strong: 0 8px 24px rgba(26,26,23,0.12), 0 16px 48px rgba(26,26,23,0.14);
+  --shadow-artistic: 0 10px 40px rgba(217,187,160,0.25), 0 2px 8px rgba(26,26,23,0.08);
 }
 
 /* Base layout */
@@ -29,6 +45,15 @@ body {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 @keyframes pulse {
   0% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -37,6 +62,45 @@ body {
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
 }
 
 /* Typography System */
@@ -175,9 +239,72 @@ a:hover {
 .card{
   background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(250,246,242,0.9));
   border: 1px solid var(--sepia);
-  box-shadow: 0 8px 18px rgba(26,26,23,0.06), 0 2px 4px rgba(26,26,23,0.04);
+  box-shadow: var(--shadow-soft);
   border-radius: 12px;
   padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-artistic);
+  transform: translateY(-4px);
+  border-color: var(--warm);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-artistic {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(251,248,244,0.95));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: var(--shadow-medium);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-artistic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--accent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-artistic:hover {
+  box-shadow: var(--shadow-artistic);
+  transform: translateY(-6px) rotate(-1deg);
+}
+
+.card-artistic:hover::before {
+  opacity: 1;
 }
 
 .wordmark{ display:inline-block; height:48px; }
@@ -290,14 +417,14 @@ p, li, a { color: #24201b; }
 }
 
 /* Decorative brush stroke accents */
-.brush-acc { 
-  display: block; 
-  width: 100%; 
+.brush-acc {
+  display: block;
+  width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, rgba(217,187,160,0.9), rgba(236,218,198,0.9)); 
-  filter: blur(0.4px); 
-  opacity: 0.96; 
-  border-radius: 4px; 
+  background: linear-gradient(90deg, rgba(217,187,160,0.9), rgba(236,218,198,0.9));
+  filter: blur(0.4px);
+  opacity: 0.96;
+  border-radius: 4px;
 }
 
 @media (min-width: 640px) {
@@ -305,3 +432,151 @@ p, li, a { color: #24201b; }
     height: 6px;
   }
 }
+
+/* Artistic decorative elements */
+.paint-stroke {
+  position: relative;
+  display: inline-block;
+}
+
+.paint-stroke::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--accent);
+  filter: blur(1px);
+  opacity: 0.3;
+  border-radius: 4px;
+  transform: skewX(-2deg);
+}
+
+.section-divider {
+  width: 120px;
+  height: 3px;
+  background: var(--accent);
+  margin: 3rem auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(217,187,160,0.4);
+}
+
+/* Artistic gradient text */
+.gradient-text {
+  background: var(--sunset);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating badge effect */
+.floating-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--warm), var(--clay));
+  color: white;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Artistic corner flourish */
+.corner-flourish {
+  position: relative;
+}
+
+.corner-flourish::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  border-top: 3px solid var(--warm);
+  border-left: 3px solid var(--warm);
+  border-radius: 4px 0 0 0;
+  opacity: 0.6;
+}
+
+.corner-flourish::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid var(--warm);
+  border-right: 3px solid var(--warm);
+  border-radius: 0 0 4px 0;
+  opacity: 0.6;
+}
+
+/* Watercolor overlay effect */
+.watercolor-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.watercolor-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(217,187,160,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(145,123,107,0.12), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(204,139,61,0.08), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Paper texture overlay */
+.paper-texture {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(26,26,23,0.01) 0px, transparent 1px, transparent 2px, rgba(26,26,23,0.01) 3px),
+    repeating-linear-gradient(90deg, rgba(26,26,23,0.01) 0px, transparent 1px, transparent 2px, rgba(26,26,23,0.01) 3px);
+}
+
+/* Artistic border effects */
+.border-artistic {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    var(--accent) border-box;
+  border-radius: 12px;
+}
+
+.border-gradient-animated {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    var(--sunset) border-box;
+  background-size: 200% 200%;
+  border-radius: 12px;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+/* Staggered animation delays for grids */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }

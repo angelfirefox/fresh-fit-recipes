@@ -5,9 +5,20 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50" style={{background:'transparent'}}>
+    <header
+      className="sticky top-0 z-50 backdrop-blur-lg transition-all duration-300"
+      style={{
+        background: 'linear-gradient(180deg, rgba(251,248,244,0.95), rgba(251,248,244,0.85))',
+        borderBottom: '1px solid rgba(201,179,154,0.2)',
+        boxShadow: '0 4px 12px rgba(26,26,23,0.04)',
+      }}
+    >
       <div className="max-w-5xl mx-auto px-4 py-4" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}}>
-        <Link href="/" className="block mb-0 hover:opacity-95 transition-opacity" aria-label={siteConfig.name}>
+        <Link
+          href="/"
+          className="block mb-0 hover:opacity-95 transition-all duration-300 hover:scale-105"
+          aria-label={siteConfig.name}
+        >
           <div style={{display:'flex',alignItems:'center',gap:12}}>
             <Image src="/wordmark.svg" alt="wordmark" width={200} height={40} className="wordmark" />
             <div style={{display:'flex',flexDirection:'column'}}>
@@ -17,12 +28,54 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav style={{display:'flex',gap:18,alignItems:'center'}}>
-          <Link href="/" className="btn ink-shift"><Home size={16} /> Home</Link>
-          <Link href="/recipes" className="btn ink-shift"><ChefHat size={16} /> Recipes</Link>
-          <Link href="/blog" className="btn ink-shift"><BookOpen size={16} /> Blog</Link>
-          <Link href="/about" className="btn ink-shift"><Info size={16} /> About</Link>
-          <Link href="/contact" className="btn ink-shift"><Mail size={16} /> Contact</Link>
+        <nav style={{display:'flex',gap:12,alignItems:'center'}}>
+          <Link
+            href="/"
+            className="btn ink-shift"
+            style={{
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <Home size={16} /> Home
+          </Link>
+          <Link
+            href="/recipes"
+            className="btn ink-shift"
+            style={{
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <ChefHat size={16} /> Recipes
+          </Link>
+          <Link
+            href="/blog"
+            className="btn ink-shift"
+            style={{
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <BookOpen size={16} /> Blog
+          </Link>
+          <Link
+            href="/about"
+            className="btn ink-shift"
+            style={{
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <Info size={16} /> About
+          </Link>
+          <Link
+            href="/contact"
+            className="btn ink-shift"
+            style={{
+              transition: 'all 0.3s ease',
+              background: 'linear-gradient(135deg, rgba(217,187,160,0.15), rgba(236,218,198,0.15))',
+              fontWeight: '700',
+            }}
+          >
+            <Mail size={16} /> Contact
+          </Link>
         </nav>
       </div>
     </header>
