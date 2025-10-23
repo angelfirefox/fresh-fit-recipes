@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Users } from "lucide-react";
 import type { Recipe } from "@/types/recipe";
-import Image from "next/image";
 
 export default function FeaturedRecipe({ recipe }: { recipe: Recipe }) {
   return (
@@ -9,11 +9,7 @@ export default function FeaturedRecipe({ recipe }: { recipe: Recipe }) {
       {recipe.imagePath ? (
         <>
           <div className="absolute inset-0 z-0">
-            <img 
-              src={recipe.imagePath}
-              alt={recipe.title}
-              className="w-full h-full object-cover"
-            />
+            <Image src={recipe.imagePath} alt={recipe.title} fill style={{objectFit:'cover'}} priority />
           </div>
           <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black/40 z-10"></div>
         </>

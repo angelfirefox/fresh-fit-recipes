@@ -14,6 +14,7 @@ The recipe images used in this project are sourced from [Unsplash](https://unspl
 ## Usage Rights
 
 All images are used under the [Unsplash License](https://unsplash.com/license):
+
 - Free to use for commercial and noncommercial purposes
 - No permission needed
 - Attribution not required (but appreciated)

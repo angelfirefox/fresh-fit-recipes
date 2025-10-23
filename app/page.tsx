@@ -6,7 +6,7 @@ import FeaturedRecipe from "@/components/FeaturedRecipe";
 import RecipeCarousel from "@/components/RecipeCarousel";
 
 export default async function Home() {
-  const allRecipes = await getAllRecipes();
+  const allRecipes: Recipe[] = await getAllRecipes();
   const featuredRecipe = allRecipes[0];
   const latestRecipes = allRecipes.slice(0, 4);
   const quickMeals = allRecipes.filter((r: Recipe) => r.totalTimeMinutes <= 20);

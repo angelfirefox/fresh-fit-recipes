@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Users, Star } from "lucide-react";
 import type { Recipe } from "@/types/recipe";
 
@@ -18,12 +19,14 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           aria-hidden="true"
         >
           {recipe.imagePath ? (
-            <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out">
-              <img 
+            <div className="w-full h-full relative group-hover:scale-105 transition-transform duration-500 ease-out">
+              <Image
                 src={recipe.imagePath}
                 alt={recipe.title}
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                priority={false}
               />
             </div>
           ) : (
