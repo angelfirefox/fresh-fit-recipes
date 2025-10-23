@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fresh Fit Recipes Logo">
+  <defs>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d9f99d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a3e635;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer circle with gradient -->
+  <circle cx="100" cy="100" r="95" fill="url(#circleGradient)" filter="url(#shadow)" opacity="0.95"/>
+
+  <!-- Decorative ring -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+
+  <!-- Center white circle -->
+  <circle cx="100" cy="100" r="72" fill="white" opacity="0.98"/>
+
+  <!-- Fresh ingredients illustration -->
+  <!-- Leaf 1 -->
+  <path d="M70 85 Q70 70, 78 65 Q82 63, 84 68 Q80 78, 78 88 Q77 92, 74 90 Q70 87, 70 85 Z"
+        fill="#10b981" opacity="0.9">
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      from="0 75 80"
+      to="5 75 80"
+      dur="3s"
+      repeatCount="indefinite"
+      additive="sum"/>
+  </path>
+
+  <!-- Leaf 2 -->
+  <path d="M130 85 Q130 70, 122 65 Q118 63, 116 68 Q120 78, 122 88 Q123 92, 126 90 Q130 87, 130 85 Z"
+        fill="#059669" opacity="0.9">
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      from="0 125 80"
+      to="-5 125 80"
+      dur="3s"
+      repeatCount="indefinite"
+      additive="sum"/>
+  </path>
+
+  <!-- Carrot -->
+  <g transform="translate(85, 105)">
+    <path d="M10 0 L12 18 Q11 20, 10 20 Q9 20, 8 18 L10 0 Z" fill="#f97316" opacity="0.9"/>
+    <path d="M8 -2 Q8 -4, 9 -5 L10 -8 L11 -5 Q12 -4, 12 -2 Z" fill="#22c55e" opacity="0.8"/>
+  </g>
+
+  <!-- Tomato -->
+  <g transform="translate(105, 105)">
+    <circle cx="0" cy="5" r="8" fill="#ef4444" opacity="0.9"/>
+    <path d="M-2 -2 Q-3 -4, -2 -5 L0 -6 L2 -5 Q3 -4, 2 -2 Z" fill="#22c55e" opacity="0.8"/>
+    <ellipse cx="2" cy="3" rx="2" ry="2.5" fill="#fca5a5" opacity="0.4"/>
+  </g>
+
+  <!-- Apple -->
+  <g transform="translate(95, 90)">
+    <circle cx="0" cy="0" r="7" fill="#dc2626" opacity="0.9"/>
+    <path d="M-1 -7 Q-1 -9, 0 -10 L1 -9 Q2 -8, 1 -7 Z" fill="#15803d" opacity="0.8"/>
+    <ellipse cx="-2" cy="-2" rx="2" ry="3" fill="#fca5a5" opacity="0.3"/>
+  </g>
+
+  <!-- Text: "FRESH" -->
+  <text x="100" y="140" font-family="'Georgia', serif" font-size="16" font-weight="700"
+        fill="#059669" text-anchor="middle" letter-spacing="2">
+    FRESH
+  </text>
+
+  <!-- Text: "FIT" -->
+  <text x="100" y="155" font-family="'Georgia', serif" font-size="16" font-weight="700"
+        fill="#059669" text-anchor="middle" letter-spacing="2">
+    FIT
+  </text>
+
+  <!-- Decorative stars -->
+  <circle cx="60" cy="140" r="1.5" fill="#10b981" opacity="0.6"/>
+  <circle cx="140" cy="140" r="1.5" fill="#10b981" opacity="0.6"/>
+  <circle cx="65" cy="150" r="1" fill="#059669" opacity="0.5"/>
+  <circle cx="135" cy="150" r="1" fill="#059669" opacity="0.5"/>
+
+  <!-- Bottom text: "RECIPES" -->
+  <text x="100" y="168" font-family="'Georgia', serif" font-size="9" font-weight="600"
+        fill="#6b7280" text-anchor="middle" letter-spacing="3">
+    RECIPES
+  </text>
+</svg>
