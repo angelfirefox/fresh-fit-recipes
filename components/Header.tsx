@@ -19,13 +19,7 @@ export default function Header() {
           className="block mb-0 hover:opacity-95 transition-all duration-300 hover:scale-105"
           aria-label={siteConfig.name}
         >
-          <div style={{display:'flex',alignItems:'center',gap:12}}>
-            <Image src="/wordmark.svg" alt="wordmark" width={200} height={40} className="wordmark" />
-            <div style={{display:'flex',flexDirection:'column'}}>
-              <span className="eyebrow">{siteConfig.tagline}</span>
-              <span className="flourish">{siteConfig.name}</span>
-            </div>
-          </div>
+          <Image src="/wordmark.svg" alt="Fresh Fit Recipes" width={150} height={36} className="wordmark" priority />
         </Link>
 
         <nav style={{display:'flex',gap:12,alignItems:'center'}}>

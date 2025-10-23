@@ -27,12 +27,79 @@
 
 /* Base layout */
 body {
-  background: var(--paper) url('/textures/paper-subtle.png') repeat; /* optional texture */
+  background: var(--paper);
   color: var(--ink);
   font-family: "Tiempos Text", Georgia, 'Times New Roman', serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.5;
+  position: relative;
+}
+
+/* Decorative background patterns */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image:
+    /* Subtle diagonal lines */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      var(--ink) 35px,
+      var(--ink) 36px
+    ),
+    /* Horizontal weave pattern */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      var(--warm) 50px,
+      var(--warm) 51px
+    ),
+    /* Vertical weave pattern */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      var(--warm) 50px,
+      var(--warm) 51px
+    );
+}
+
+/* Floating decorative elements */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.025;
+  background-image:
+    /* Small dots pattern */
+    radial-gradient(circle at 20% 30%, var(--sage) 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, var(--terracotta) 2px, transparent 2px),
+    radial-gradient(circle at 50% 90%, var(--ochre) 2px, transparent 2px),
+    radial-gradient(circle at 10% 60%, var(--clay) 2px, transparent 2px),
+    radial-gradient(circle at 90% 20%, var(--sage) 2px, transparent 2px);
+  background-size: 200px 200px, 250px 250px, 180px 180px, 220px 220px, 190px 190px;
+  background-position: 0 0, 40px 40px, 80px 80px, 120px 120px, 160px 160px;
+}
+
+/* Ensure content is above decorative elements */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Animations */

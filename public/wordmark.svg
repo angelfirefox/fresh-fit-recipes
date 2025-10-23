@@ -1,19 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="360" height="64" viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fresh Fit Recipes wordmark">
+<svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fresh Fit Recipes">
   <defs>
-    <filter id="inkShadow" x="-20%" y="-40%" width="140%" height="200%" filterUnits="objectBoundingBox">
-      <feGaussianBlur stdDeviation="1.6" result="blur" />
-      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.25 0" />
-      <feOffset dx="0" dy="2"/>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <!-- Handwritten-styled wordmark: smooth curves + slight ink variance -->
-  <g filter="url(#inkShadow)">
-    <path d="M12 44c18-18 38-28 68-6 20 14 44 18 76 6 20-8 44-24 68-18" stroke="#1a1a17" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.98"/>
-    <path d="M24 26c14-8 32-10 52 2 18 10 36 8 58-2" stroke="#1a1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+
+  <!-- Decorative leaf icon on the left -->
+  <g filter="url(#softShadow)">
+    <!-- Main leaf -->
+    <path d="M8 24 Q8 12, 16 8 Q20 6, 22 10 Q18 18, 16 28 Q15 32, 12 30 Q8 27, 8 24 Z"
+          fill="url(#leafGradient)" opacity="0.95"/>
+    <!-- Secondary leaf -->
+    <path d="M14 22 Q18 18, 22 16 Q25 15, 26 18 Q22 24, 18 30 Q16 32, 14 29 Q12 26, 14 22 Z"
+          fill="url(#leafGradient)" opacity="0.8"/>
+    <!-- Leaf vein detail -->
+    <path d="M16 10 L15 28" stroke="#047857" stroke-width="0.5" opacity="0.6"/>
   </g>
-  <!-- Subtext / tagline with a typewriter-ish, slightly imperfect baseline -->
-  <g transform="translate(8,50)" fill="#3b3228" font-family="Georgia, 'Times New Roman', serif" font-size="10">
-    <text x="0" y="0">handcrafted recipes & notes</text>
+
+  <!-- "Fresh Fit" text - artistic handwritten style -->
+  <g transform="translate(32, 20)">
+    <text font-family="'Brush Script MT', 'Calligraffitti', cursive"
+          font-size="18"
+          font-weight="400"
+          fill="#1a1a17"
+          letter-spacing="0.5">
+      <tspan x="0" y="0">Fresh Fit</tspan>
+    </text>
+  </g>
+
+  <!-- "Recipes" text - elegant serif -->
+  <g transform="translate(32, 38)">
+    <text font-family="'Georgia', serif"
+          font-size="11"
+          font-weight="600"
+          fill="#3b3228"
+          letter-spacing="1.5">
+      <tspan x="0" y="0">RECIPES</tspan>
+    </text>
+  </g>
+
+  <!-- Decorative flourish -->
+  <g opacity="0.4">
+    <path d="M110 22 Q118 18, 126 22"
+          stroke="#10b981"
+          stroke-width="1"
+          fill="none"
+          stroke-linecap="round"/>
+    <circle cx="110" cy="22" r="1.5" fill="#10b981"/>
+    <circle cx="126" cy="22" r="1.5" fill="#10b981"/>
+  </g>
+
+  <!-- Subtle "healthy" indicator dots -->
+  <g transform="translate(135, 24)" opacity="0.5">
+    <circle cx="0" cy="-2" r="1.5" fill="#10b981"/>
+    <circle cx="6" cy="-2" r="1.5" fill="#059669"/>
+    <circle cx="12" cy="-2" r="1.5" fill="#047857"/>
   </g>
 </svg>
