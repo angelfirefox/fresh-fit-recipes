@@ -13,7 +13,7 @@ export default function Header() {
         boxShadow: '0 4px 12px rgba(26,26,23,0.04)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 py-5" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}}>
+      <div className="max-w-7xl mx-auto px-4 py-6" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24}}>
         <Link
           href="/"
           className="block mb-0 hover:opacity-95 transition-all duration-300 hover:scale-105"
@@ -22,9 +22,9 @@ export default function Header() {
           <Image
             src="/wordmark.svg"
             alt="Fresh Fit Recipes"
-            width={240}
-            height={58}
-            className="wordmark w-48 h-auto md:w-60 lg:w-72"
+            width={320}
+            height={77}
+            className="wordmark w-64 h-auto md:w-80 lg:w-96"
             priority
           />
         </Link>
