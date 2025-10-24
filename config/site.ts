@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Fresh & Fit Recipes",
+  name: "Foxy's Recipe Box",
   tagline: "Healthy meals, simple methods, everyday ingredients.",
   url: "https://fresh-and-fit.example",
   author: "Mellow",

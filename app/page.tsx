@@ -22,7 +22,7 @@ export default async function Home() {
         {/* Latest Recipes Section */}
         <section className="mb-20 relative">
           {/* Decorative background element */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-green-100 to-blue-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-green-100 to-blue-100 rounded-full blur-3xl opacity-30 -z-10"></div>
 
           <div className="flex items-end justify-between mb-8">
             <div className="relative">
@@ -52,7 +52,7 @@ export default async function Home() {
         {quickMeals.length > 0 && (
           <section className="mb-20 relative watercolor-bg rounded-3xl p-8 md:p-12">
             {/* Decorative background */}
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-orange-100 to-yellow-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-linear-to-tr from-orange-100 to-yellow-100 rounded-full blur-3xl opacity-30 -z-10"></div>
 
             <div className="mb-8">
               <div className="paint-stroke inline-block">
@@ -68,7 +68,7 @@ export default async function Home() {
         {veganRecipes.length > 0 && (
           <section className="mb-20 relative">
             {/* Decorative background */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full blur-3xl opacity-20 -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-green-100 to-emerald-100 rounded-full blur-3xl opacity-20 -z-10"></div>
 
             <div className="mb-8">
               <div className="paint-stroke inline-block">
@@ -95,8 +95,8 @@ export default async function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link href="/recipes?meal=breakfast" className="group">
-              <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-orange-200/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="bg-linear-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-orange-200/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="text-center relative z-10">
                   <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">🍳</div>
                   <h3 className="font-bold text-xl text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Breakfast</h3>
@@ -104,8 +104,8 @@ export default async function Home() {
               </div>
             </Link>
             <Link href="/recipes?meal=lunch" className="group">
-              <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-green-200/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="bg-linear-to-br from-green-100 to-green-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-green-200/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="text-center relative z-10">
                   <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">🥗</div>
                   <h3 className="font-bold text-xl text-gray-900 group-hover:text-green-600 transition-colors duration-300">Lunch</h3>
@@ -113,8 +113,8 @@ export default async function Home() {
               </div>
             </Link>
             <Link href="/recipes?meal=dinner" className="group">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-blue-200/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="bg-linear-to-br from-blue-100 to-blue-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-blue-200/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="text-center relative z-10">
                   <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">🍽️</div>
                   <h3 className="font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Dinner</h3>
@@ -122,8 +122,8 @@ export default async function Home() {
               </div>
             </Link>
             <Link href="/recipes?meal=snack" className="group">
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-purple-200/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="bg-linear-to-br from-purple-100 to-purple-200 rounded-2xl p-8 h-40 flex items-center justify-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border-2 border-purple-200/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="text-center relative z-10">
                   <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">🍪</div>
                   <h3 className="font-bold text-xl text-gray-900 group-hover:text-purple-600 transition-colors duration-300">Snacks</h3>
@@ -134,7 +134,7 @@ export default async function Home() {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="relative bg-gradient-to-r from-green-600 via-green-700 to-blue-600 rounded-3xl p-10 md:p-16 text-white text-center overflow-hidden shadow-2xl">
+        <section className="relative bg-linear-to-r from-green-600 via-green-700 to-blue-600 rounded-3xl p-10 md:p-16 text-white text-center overflow-hidden shadow-2xl">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl"></div>

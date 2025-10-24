@@ -31,7 +31,7 @@ export default async function RecipePage({ params }: { params: Promise<{ slug: s
 
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
         {recipe.imagePath ? (
-          <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-green-50 to-blue-50">
+          <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-linear-to-br from-green-50 to-blue-50">
             <Image
               src={recipe.imagePath}
               alt={recipe.title}
@@ -40,10 +40,10 @@ export default async function RecipePage({ params }: { params: Promise<{ slug: s
               priority
               className="animate-fade-in"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"></div>
           </div>
         ) : (
-          <div className="text-8xl text-center py-16 bg-gradient-to-br from-green-50 to-blue-50">
+          <div className="text-8xl text-center py-16 bg-linear-to-br from-green-50 to-blue-50">
             {recipe.heroImage}
           </div>
         )}

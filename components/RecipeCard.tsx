@@ -32,7 +32,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                 priority={false}
               />
               {/* Artistic gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ) : (
             <span className="text-7xl group-hover:scale-110 transition-transform duration-500 ease-out">
@@ -61,7 +61,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             {recipe.dietTags.slice(0, 2).map((tag, index) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 bg-gradient-to-br from-green-50 to-green-100 text-green-700 text-xs rounded-full font-semibold shadow-sm group-hover:shadow-md transition-all duration-300 border border-green-200/50"
+                className="px-3 py-1.5 bg-linear-to-br from-green-50 to-green-100 text-green-700 text-xs rounded-full font-semibold shadow-sm group-hover:shadow-md transition-all duration-300 border border-green-200"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
@@ -72,7 +72,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             ))}
             {recipe.dietTags.length > 2 && (
               <span
-                className="px-3 py-1.5 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600 text-xs rounded-full font-semibold shadow-sm group-hover:shadow-md transition-all duration-300 border border-gray-200/50"
+                className="px-3 py-1.5 bg-linear-to-br from-gray-50 to-gray-100 text-gray-600 text-xs rounded-full font-semibold shadow-sm group-hover:shadow-md transition-all duration-300 border border-gray-200"
                 role="listitem"
                 aria-label={`and ${recipe.dietTags.length - 2} more diet tags`}
               >
