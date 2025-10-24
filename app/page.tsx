@@ -4,6 +4,7 @@ import type { Recipe } from "@/types/recipe";
 import RecipeCard from "@/components/RecipeCard";
 import FeaturedRecipe from "@/components/FeaturedRecipe";
 import RecipeCarousel from "@/components/RecipeCarousel";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default async function Home() {
   const allRecipes: Recipe[] = await getAllRecipes();
@@ -144,16 +145,7 @@ export default async function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Never Miss a Recipe</h2>
             <p className="text-xl md:text-2xl mb-8 opacity-95 max-w-2xl mx-auto">Get weekly recipes and cooking tips delivered to your inbox</p>
-            <div className="max-w-lg mx-auto flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-xl text-gray-900 font-medium shadow-lg focus:outline-none focus:ring-4 focus:ring-white/50 transition-all duration-300"
-              />
-              <button className="bg-white text-green-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform">
-                Subscribe
-              </button>
-            </div>
+            <NewsletterForm />
             <p className="text-sm mt-6 opacity-80">Join 10,000+ food lovers getting fresh recipes weekly</p>
           </div>
         </section>
